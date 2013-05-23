@@ -1,0 +1,589 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     23210,        580]
+NotebookOptionsPosition[     22874,        565]
+NotebookOutlinePosition[     23308,        582]
+CellTagsIndexPosition[     23265,        579]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Creamos", " ", "un", " ", "di\[AAcute]logo", " ", "para", " ", "abrir", 
+    " ", "el", " ", "archivo"}], " ", "*)"}], "\n", "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"nombreArchivo", " ", "=", " ", 
+     RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"datos", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Import", "[", "nombreArchivo", "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Utilizar", " ", "este", " ", "comando", " ", "para", " ", "importar", 
+     " ", "un", " ", "archivo", " ", "fijo"}], " ", "*)"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"datos", " ", "=", " ", 
+      RowBox[{
+       RowBox[{
+       "Import", "[", 
+        "\"\</Users/srcornejo/Dropbox/InfliuidoInfluyente(10Casos).xls\>\"", 
+        "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ";"}], " ", "*)"}], 
+   "\[IndentingNewLine]", "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Comprobamos", " ", "que", " ", "haya", " ", "una", " ", "lista", " ", 
+     "importada"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", "\n", "  \t", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Head", "[", 
+        RowBox[{"{", "}"}], "]"}], " ", "===", " ", 
+       RowBox[{"Head", "[", "datos", "]"}]}], ",", " ", ",", "\n", "  \t", 
+      RowBox[{"CreateDocument", "[", 
+       RowBox[{"{", "\"\<El archivo seleccionado no es una lista\>\"", "}"}], 
+       "\n", "   ", "]"}]}], "]"}], ";"}], "\n", "\n", "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Comprobamos", " ", "que", " ", "los", " ", "objetos", " ", "influidos", 
+     " ", "sean", " ", "los", " ", "mismos", " ", "que", " ", "los", " ", 
+     "influyentes"}], " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"objetos1", " ", "=", " ", 
+     RowBox[{"Sort", "[", 
+      RowBox[{"Union", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "datos", "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"objetos2", " ", "=", " ", 
+     RowBox[{"Sort", "[", 
+      RowBox[{"Union", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "datos", "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"objetos", " ", "=", " ", 
+     RowBox[{"Union", "[", 
+      RowBox[{"objetos1", ",", " ", "objetos2"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"If", "[", "\n", "  \t", 
+     RowBox[{
+      RowBox[{"objetos1", " ", "===", " ", "objetos2"}], ",", " ", ",", "\n", 
+      "  \t", 
+      RowBox[{"CreateDocument", "[", 
+       RowBox[{
+       "{", "\"\<No hay los mismos objetos en influidos y en influyentes\>\"",
+         "}"}], "\n", "   ", "]"}]}], "]"}], ";"}], "\n", "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Comprobamos", " ", "que", " ", "la", " ", "suma", " ", "de", " ", 
+     "intensidades", " ", "para", " ", "todas", " ", "las", " ", "relaciones",
+      " ", "con", " ", "el", " ", "mismo", " ", "objeto", " ", "influyente", 
+     " ", "sea", " ", "1"}], " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"datosOrdenados", " ", "=", " ", 
+     RowBox[{"GatherBy", "[", 
+      RowBox[{"datos", ",", " ", "First"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"suma", "[", "lista_", "]"}], " ", ":=", " ", 
+     RowBox[{"Total", "[", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], " ", "&"}], ",", " ", "lista"}], 
+       "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{"If", "[", "\n", " \t", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Union", "[", 
+       RowBox[{"Map", "[", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", " ", "==", " ", "1."}], " ", "&"}], ",", " ", 
+         RowBox[{"Map", "[", 
+          RowBox[{"suma", ",", " ", "datosOrdenados"}], "]"}]}], "]"}], "]"}],
+       " ", "==", " ", 
+      RowBox[{"{", "True", "}"}]}], ",", " ", ",", "\n", " \t", 
+     RowBox[{
+      RowBox[{"CreateDocument", "[", 
+       RowBox[{"{", "\"\<Las intensidades no suman 1\>\"", "}"}], "]"}], 
+      ";"}]}], "\n", " ", "]"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Montamos", " ", "el", " ", "grafo"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"grafo", " ", "=", " ", 
+     RowBox[{"Graph", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "\[DirectedEdge]", " ", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], " ", "&"}], ",", " ", "datos"}],
+         "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"EdgeWeight", " ", "->", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], " ", "&"}], ",", " ", "datos"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"VertexLabels", " ", "->", " ", "\"\<Name\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"EdgeLabels", " ", "->", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], " ", "\[DirectedEdge]", " ", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], " ", "\[Rule]", " ", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}]}], " ", "&"}], ",", " ", 
+          "datos"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Sacamos", " ", "la", " ", "matriz", " ", "de", " ", "adyacencia", " ", 
+     "ponderada"}], " ", "*)"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{
+    RowBox[{"matriz", " ", "=", " ", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"WeightedAdjacencyMatrix", "[", "grafo", "]"}], "]"}], "]"}]}],
+     ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "La", " ", "matriz", " ", "con", " ", "s\[OAcute]lo", " ", "la", " ", 
+     "diagonal"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"matrizDiagonal", " ", "=", " ", 
+     RowBox[{"DiagonalMatrix", "[", 
+      RowBox[{"Diagonal", "[", "matriz", "]"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Construimos", " ", "la", " ", "submatriz", " ", "superior", " ", 
+     "izquierda"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"supIzq", " ", "=", " ", 
+     RowBox[{"matriz", " ", "-", " ", "matrizDiagonal", " ", "-", " ", 
+      RowBox[{"IdentityMatrix", "[", 
+       RowBox[{"Length", "[", "objetos", "]"}], "]"}]}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Matriz", " ", "de", " ", "ceros"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"matrizCeros", " ", "=", " ", 
+     RowBox[{"ConstantArray", "[", 
+      RowBox[{"0", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Length", "[", "objetos", "]"}], ",", " ", 
+         RowBox[{"Length", "[", "objetos", "]"}]}], "}"}]}], "]"}]}], ";"}], 
+   "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Mitades", " ", "superior", " ", "e", " ", "inferior"}], " ", 
+    "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"matrizSuperior", " ", "=", " ", 
+     RowBox[{"Flatten", " ", "/@", " ", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"{", 
+        RowBox[{"supIzq", ",", " ", "matrizCeros"}], "}"}], "]"}]}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"matrizInferior", " ", "=", " ", 
+     RowBox[{"Flatten", " ", "/@", " ", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"{", 
+        RowBox[{"matrizDiagonal", ",", " ", "matrizCeros"}], "}"}], "]"}]}]}],
+     ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Matriz", " ", "final"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"matrizFinal", " ", "=", " ", 
+     RowBox[{"Join", "[", 
+      RowBox[{"matrizSuperior", ",", " ", "matrizInferior"}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"matrizExponencial", " ", "=", " ", 
+     RowBox[{"MatrixExp", "[", 
+      RowBox[{"1000", " ", "matrizFinal"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "El", " ", "orden", " ", "de", " ", "los", " ", "v\[EAcute]rtices", " ", 
+      "no", " ", "viene", " ", "dado", " ", "por", " ", "el", " ", 
+      "inicial"}], ",", " ", 
+     RowBox[{"sino", " ", "por", " ", "esta", " ", 
+      RowBox[{"expresi\[OAcute]n", ":"}]}]}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"objetosOrdenados", " ", "=", " ", 
+     RowBox[{"VertexList", "[", "grafo", "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Redondeamos", " ", "con", " ", "tres", " ", "decimales", " ", "y", " ", 
+     "extraemos", " ", "la", " ", "parte", " ", "que", " ", "nos", " ", 
+     "interesa", " ", "en", " ", "matrizAdyacenciaFinal"}], " ", "*)"}], "\n",
+    "\n", 
+   RowBox[{
+    RowBox[{"numObjetos", " ", "=", " ", 
+     RowBox[{"Length", "[", "objetos", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"matrizRedondeada", " ", "=", " ", 
+     RowBox[{"N", "[", 
+      RowBox[{"Round", "[", 
+       RowBox[{"matrizExponencial", " ", ",", " ", 
+        RowBox[{"10", "^", 
+         RowBox[{"-", "3"}]}]}], "]"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"matrizAdyacenciaFinal", " ", "=", " ", 
+     RowBox[{"matrizRedondeada", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"numObjetos", " ", "+", " ", "1"}], " ", ";;", " ", 
+         RowBox[{"-", "1"}]}], ",", " ", 
+        RowBox[{"1", " ", ";;", " ", "numObjetos"}]}], "]"}], "]"}]}], ";"}], 
+   "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Asociamos", " ", "en", " ", "una", " ", "lista", " ", "los", " ", 
+      "objetos", " ", "a", " ", "sus", " ", "\[IAcute]ndices"}], ",", " ", 
+     RowBox[{"con", " ", "la", " ", "forma", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<A1\>\"", ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<B2\>\"", ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<C3\>\"", ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<J9\>\"", ",", "4"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<D4\>\"", ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<E5\>\"", ",", "6"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<F6\>\"", ",", "7"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<G7\>\"", ",", "8"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<H8\>\"", ",", "9"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<K10\>\"", ",", "10"}], "}"}]}], "}"}]}]}], " ", "*)"}], 
+   "\n", "\n", 
+   RowBox[{
+    RowBox[{"objetosConIndice", " ", "=", " ", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"objetosOrdenados", ",", " ", 
+        RowBox[{"Range", "[", "10", "]"}]}], "}"}], "]"}]}], ";"}], "\n", 
+   "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Y", " ", "montamos", " ", "una", " ", "regla", " ", "con", " ", "ello"}],
+     " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"mapa", " ", "=", " ", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], " ", "->", " ", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], " ", "&"}], ",", " ", 
+       "objetosConIndice"}], "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Tabla", " ", "con", " ", "conexiones", " ", "con", " ", "intensidad", 
+     " ", "cero"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"listaInfluidosInfluyentesFinalCeros", " ", "=", " ", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"i", " ", "/.", " ", "mapa"}], ",", " ", 
+           RowBox[{"j", " ", "/.", " ", "mapa"}], ",", " ", 
+           RowBox[{"matrizAdyacenciaFinal", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", " ", "j"}], "]"}], "]"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "10"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", " ", "10"}], "}"}]}], "]"}], ",", " ", "1"}], 
+      "]"}]}], ";"}], "\n", "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Y", " ", "sin", " ", "ellos"}], " ", "*)"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"listaInfluidosInfluyentesFinalSinCeros", " ", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{"listaInfluidosInfluyentesFinalCeros", ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], " ", "!=", " ", "0"}], " ", "&"}]}],
+       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Formateamos", " ", "una", " ", "lista", " ", "de", " ", "intensidades"}],
+     " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"reglaA", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}], " ", "\[Rule]", " ", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], "&"}], "/@", "datos"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"reglaB", " ", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}], " ", "\[Rule]", " ", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], "&"}], "/@", 
+      "listaInfluidosInfluyentesFinalSinCeros"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"todasLasCombinaciones", " ", "=", " ", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", "j"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "objetos"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "objetos"}], "}"}]}], "]"}], ",", " ", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"todasLasCombinaciones", "/.", "reglaA"}], "/.", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x_", "/;", 
+         RowBox[{"ArrayQ", "[", "x", "]"}]}], ")"}], "\[Rule]", "0.0"}]}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"todasLasCombinaciones", "/.", "reglaB"}], "/.", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x_", "/;", 
+         RowBox[{"ArrayQ", "[", "x", "]"}]}], ")"}], "\[Rule]", "0.0"}]}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"listaTodasLasRelaciones", " ", "=", " ", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"todasLasCombinaciones", ",", "a", ",", " ", "b"}], "}"}], 
+        "]"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}], " ", "\[NotEqual]", " ", "0."}], 
+        " ", "&"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"tablaIntensidades", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{"Flatten", ",", 
+        RowBox[{"Prepend", "[", 
+         RowBox[{"listaTodasLasRelaciones", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<Influido\>\"", ",", " ", "\"\<Influyente\>\"", ",", " ", 
+            "\"\<Inicial\>\"", ",", " ", "\"\<Final\>\""}], "}"}]}], "]"}]}], 
+       "]"}], "//", "TableForm"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Generamos", " ", "un", " ", "grafo", " ", "de", " ", "las", " ", 
+     "relaciones", " ", "indirectas"}], " ", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"grafo2", " ", "=", " ", 
+     RowBox[{"Graph", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "\[DirectedEdge]", " ", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], " ", "&"}], ",", " ", 
+         "listaInfluidosInfluyentesFinalSinCeros"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"EdgeWeight", " ", "->", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], " ", "&"}], ",", " ", 
+          "listaInfluidosInfluyentesFinalSinCeros"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"VertexLabels", " ", "->", " ", "\"\<Name\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"EdgeLabels", " ", "->", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], " ", "\[DirectedEdge]", " ", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], " ", "\[Rule]", " ", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}]}], " ", "&"}], ",", " ", 
+          "listaInfluidosInfluyentesFinalSinCeros"}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Sacamos", " ", "la", " ", "tabla", " ", "en", " ", "un", " ", 
+     "documento", " ", "fuera"}], " ", "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CreateDocument", "[", 
+     RowBox[{"{", "\n", "   \t", 
+      RowBox[{
+       RowBox[{"TextCell", "[", 
+        RowBox[{
+        "\"\<Tabla final de conexiones Influido \[Rule] Influyente, \
+Intensidad\>\"", ",", " ", "\"\<Section\>\""}], "]"}], ",", " ", "\n", 
+       "   \t", "tablaIntensidades", ",", "\n", "   \t", 
+       RowBox[{"TextCell", "[", 
+        RowBox[{
+        "\"\<Grafo de relaciones directas\>\"", ",", " ", "\"\<Section\>\""}],
+         "]"}], ",", "\n", "   \t", "grafo", ",", "\[IndentingNewLine]", 
+       "     ", 
+       RowBox[{"TextCell", "[", 
+        RowBox[{
+        "\"\<Grafo de relaciones indirectas\>\"", ",", " ", 
+         "\"\<Section\>\""}], "]"}], ",", "\n", "   \t", "grafo2"}], "\n", 
+      "   ", "}"}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.560058923937328*^9, 3.560059013887473*^9}, {
+   3.5600591712914753`*^9, 3.560059218082152*^9}, {3.560059278178589*^9, 
+   3.560059314186649*^9}, {3.56014450834562*^9, 3.56014451120392*^9}, {
+   3.560144546021511*^9, 3.560144622625614*^9}, {3.560144652768684*^9, 
+   3.560144655863187*^9}, {3.560144696050058*^9, 3.5601448122184343`*^9}, {
+   3.560144869770506*^9, 3.560144938178632*^9}, {3.5601449848400993`*^9, 
+   3.56014498862269*^9}, {3.5601451101475058`*^9, 3.5601451575013313`*^9}, {
+   3.560145190982772*^9, 3.560145192510871*^9}, {3.560145237153462*^9, 
+   3.5601453134750557`*^9}, {3.560145440566195*^9, 3.560145443421773*^9}, {
+   3.5601457040036383`*^9, 3.560145777179481*^9}, {3.560146659119734*^9, 
+   3.560146754051402*^9}, {3.560146928151456*^9, 3.560146986907297*^9}, {
+   3.560147050530733*^9, 3.560147143205439*^9}, {3.560147452418673*^9, 
+   3.56014745844561*^9}, {3.560147527084297*^9, 3.560147782925376*^9}, 
+   3.560147889016144*^9, {3.5601481931590967`*^9, 3.5601482031851997`*^9}, {
+   3.560149802076129*^9, 3.5601498780004253`*^9}, {3.560149913093313*^9, 
+   3.5601499502490892`*^9}, {3.560150278908803*^9, 3.560150293994134*^9}, {
+   3.5601503979924498`*^9, 3.5601504197188883`*^9}, {3.560150455801375*^9, 
+   3.560150459311419*^9}, {3.560150647044166*^9, 3.56015081846603*^9}, {
+   3.5601509320478373`*^9, 3.560150946552621*^9}, 3.5601511471722097`*^9, 
+   3.560151246587096*^9, {3.560168550589175*^9, 3.560168579569235*^9}, {
+   3.5601686147899237`*^9, 3.560168679334186*^9}, {3.560168717147705*^9, 
+   3.560168718501644*^9}, {3.560169148447754*^9, 3.560169207832108*^9}, {
+   3.560173939996464*^9, 3.560173990985889*^9}, {3.5602368263189793`*^9, 
+   3.5602368384186716`*^9}, {3.5602370154167957`*^9, 
+   3.5602370303026466`*^9}, {3.560237080261504*^9, 3.560237119800766*^9}, {
+   3.5602372273689184`*^9, 3.5602372617048826`*^9}, {3.5602373337260017`*^9, 
+   3.5602374461884346`*^9}, {3.560238140660156*^9, 3.560238173214018*^9}, {
+   3.5602382073749714`*^9, 3.560238268555471*^9}, 3.560238351397209*^9, {
+   3.5602383924905596`*^9, 3.5602386760387774`*^9}, {3.5602387920894156`*^9, 
+   3.560238833448781*^9}, {3.560239176240388*^9, 3.560239347737197*^9}, {
+   3.5602393794470105`*^9, 3.56023938958759*^9}, {3.5602394251296234`*^9, 
+   3.5602394794127283`*^9}, {3.5602395344888783`*^9, 
+   3.5602395465455675`*^9}, {3.560239695698099*^9, 3.560239708817849*^9}, {
+   3.5603297437367163`*^9, 3.560329846558869*^9}, {3.56032988997972*^9, 
+   3.5603299141043653`*^9}, {3.56033533646699*^9, 3.560335359771678*^9}, {
+   3.560335393264049*^9, 3.560335432230483*^9}, {3.560335848623643*^9, 
+   3.560335918051721*^9}, {3.5603363413160257`*^9, 3.56033638285707*^9}, {
+   3.5603371280520773`*^9, 3.5603372361571207`*^9}, {3.560337270850278*^9, 
+   3.560337289887875*^9}, {3.560337334458345*^9, 3.560337435873114*^9}, {
+   3.560337507611792*^9, 3.560337528318143*^9}, {3.560337903129388*^9, 
+   3.560337935801359*^9}, {3.560337978056584*^9, 3.5603380222508707`*^9}, {
+   3.560338071643847*^9, 3.560338165259848*^9}, {3.560338304821823*^9, 
+   3.560338350531723*^9}, {3.5603384736595373`*^9, 3.560338489330501*^9}, {
+   3.560338651655106*^9, 3.56033868967945*^9}}]
+},
+WindowSize->{944, 1132},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 22313, 543, 2273, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
