@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     23210,        580]
-NotebookOptionsPosition[     22874,        565]
-NotebookOutlinePosition[     23308,        582]
-CellTagsIndexPosition[     23265,        579]
+NotebookDataLength[     49112,       1098]
+NotebookOptionsPosition[     48018,       1063]
+NotebookOutlinePosition[     48452,       1080]
+CellTagsIndexPosition[     48409,       1077]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
@@ -37,7 +39,8 @@ Cell[BoxData[
    RowBox[{"(*", " ", 
     RowBox[{
     "Utilizar", " ", "este", " ", "comando", " ", "para", " ", "importar", 
-     " ", "un", " ", "archivo", " ", "fijo"}], " ", "*)"}], "\n", 
+     " ", "un", " ", "archivo", " ", "fijo"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{"datos", " ", "=", " ", 
@@ -46,12 +49,12 @@ Cell[BoxData[
        "Import", "[", 
         "\"\</Users/srcornejo/Dropbox/InfliuidoInfluyente(10Casos).xls\>\"", 
         "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ";"}], " ", "*)"}], 
-   "\[IndentingNewLine]", "\n", "\n", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ";"}], " ", "*)"}], "\n", "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "Comprobamos", " ", "que", " ", "haya", " ", "una", " ", "lista", " ", 
-     "importada"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "importada"}], " ", "*)"}], "\n", 
    RowBox[{
     RowBox[{"If", "[", "\n", "  \t", 
      RowBox[{
@@ -167,18 +170,18 @@ Cell[BoxData[
             RowBox[{"ToString", "[", 
              RowBox[{"#", "[", 
               RowBox[{"[", "3", "]"}], "]"}], "]"}]}], " ", "&"}], ",", " ", 
-          "datos"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+          "datos"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "Sacamos", " ", "la", " ", "matriz", " ", "de", " ", "adyacencia", " ", 
-     "ponderada"}], " ", "*)"}], "\[IndentingNewLine]", "\n", 
+     "ponderada"}], " ", "*)"}], "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"matriz", " ", "=", " ", 
      RowBox[{"Normal", "[", 
       RowBox[{"Transpose", "[", 
        RowBox[{"WeightedAdjacencyMatrix", "[", "grafo", "]"}], "]"}], "]"}]}],
-     ";"}], "\n", "\n", 
+     ";"}], "\n", "matriz", "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "La", " ", "matriz", " ", "con", " ", "s\[OAcute]lo", " ", "la", " ", 
@@ -306,8 +309,8 @@ Cell[BoxData[
      RowBox[{"Transpose", "[", 
       RowBox[{"{", 
        RowBox[{"objetosOrdenados", ",", " ", 
-        RowBox[{"Range", "[", "10", "]"}]}], "}"}], "]"}]}], ";"}], "\n", 
-   "\n", 
+        RowBox[{"Range", "[", "numObjetos", "]"}]}], "}"}], "]"}]}], ";"}], 
+   "\n", "\n", 
    RowBox[{"(*", " ", 
     RowBox[{
     "Y", " ", "montamos", " ", "una", " ", "regla", " ", "con", " ", "ello"}],
@@ -341,9 +344,9 @@ Cell[BoxData[
             RowBox[{"[", 
              RowBox[{"i", ",", " ", "j"}], "]"}], "]"}]}], "}"}], ",", " ", 
          RowBox[{"{", 
-          RowBox[{"i", ",", " ", "10"}], "}"}], ",", " ", 
+          RowBox[{"i", ",", " ", "numObjetos"}], "}"}], ",", " ", 
          RowBox[{"{", 
-          RowBox[{"j", ",", " ", "10"}], "}"}]}], "]"}], ",", " ", "1"}], 
+          RowBox[{"j", ",", "numObjetos"}], "}"}]}], "]"}], ",", " ", "1"}], 
       "]"}]}], ";"}], "\n", "\n", 
    RowBox[{"(*", " ", 
     RowBox[{"Y", " ", "sin", " ", "ellos"}], " ", "*)"}], "\n", "\n", 
@@ -561,7 +564,502 @@ Intensidad\>\"", ",", " ", "\"\<Section\>\""}], "]"}], ",", " ", "\n",
    3.560337935801359*^9}, {3.560337978056584*^9, 3.5603380222508707`*^9}, {
    3.560338071643847*^9, 3.560338165259848*^9}, {3.560338304821823*^9, 
    3.560338350531723*^9}, {3.5603384736595373`*^9, 3.560338489330501*^9}, {
-   3.560338651655106*^9, 3.56033868967945*^9}}]
+   3.560338651655106*^9, 3.56033868967945*^9}, {3.5783097467630568`*^9, 
+   3.578309748066111*^9}, {3.578310459860363*^9, 3.578310463690433*^9}, {
+   3.578310494649885*^9, 3.5783105048993893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1.`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "1.`", ",", "0.`", ",", "0.333`", 
+     ",", "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.`", ",", "0.`", ",",
+      "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.25`", ",", "0.`", ",", "1.`", ",", "0.333`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.334`", ",",
+      "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", "0.`",
+      ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.334`", ",", "0.166`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.17`", ",", "0.334`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.142`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.334`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "1.`", ",", 
+     "0.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "1.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.334`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.334`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.5783101252390623`*^9, 3.578310170287034*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Transpose", "::", "nmtx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first two levels of the one-dimensional list \
+\[NoBreak]\\!\\({\\(\\({\\\"Perdida de vegetacion de ribera\\\", \\\"Nivel de \
+erosion del cauce\\\", \\\"Profundidad del cauce\\\", \\\"Canalizacion\\\", \
+\\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \\\"Sinuosidad\\\", \
+\\\"Velocidad de las aguas\\\", \\\"Cantidad de rapidos y remansos\\\", \
+\\\"Cantidad de habitats\\\", \\\"Diversidad biologica\\\", \\\"Fertilizantes \
+agricolas\\\", \\\"Vertidos de urbanizacion\\\", \\\"Contaminacion \
+difusa\\\", \\\"Contaminacion puntual\\\", \\\"Calidad de las \
+aguas\\\"}\\)\\), \\(\\({\\(\[LeftSkeleton] 1 \[RightSkeleton]\\)}\\)\\)}\\)\
+\[NoBreak] cannot be transposed. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Transpose/nmtx\\\", ButtonNote -> \
+\\\"Transpose::nmtx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101703369493`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170381159*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170419187*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170464119*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(ReplaceAll :: reps\\), \\\"MessageName\\\"]\\)\
+\[NoBreak] will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101704658937`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Transpose", "::", "nmtx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first two levels of the one-dimensional list \
+\[NoBreak]\\!\\({\\(\\({\\(\\({\\\"Ancho del cauce\\\", \\\"Ancho del cauce\\\
+\"}\\)\\), \\(\\({\\\"Ancho del cauce\\\", \\\"Calidad de las \
+aguas\\\"}\\)\\), \\(\\({\\\"Ancho del cauce\\\", \
+\\\"Canalizacion\\\"}\\)\\), \\(\\({\\\"Ancho del cauce\\\", \\\"Cantidad de \
+habitats\\\"}\\)\\), \\(\\({\\\"Ancho del cauce\\\", \\\"Cantidad de rapidos \
+y remansos\\\"}\\)\\), \\(\\(\[LeftSkeleton] 42 \[RightSkeleton]\\)\\), \
+\\(\\({\\\"Canalizacion\\\", \\\"Vertidos de urbanizacion\\\"}\\)\\), \\(\\({\
+\\\"Cantidad de habitats\\\", \\\"Ancho del cauce\\\"}\\)\\), \
+\\(\\({\\\"Cantidad de habitats\\\", \\\"Calidad de las aguas\\\"}\\)\\), \\(\
+\\(\[LeftSkeleton] 206 \[RightSkeleton]\\)\\)}\\)\\), \\(\\({0.334`, 0.`, \\(\
+\\(\[LeftSkeleton] 47 \[RightSkeleton]\\)\\), 0.`, \\(\\(\[LeftSkeleton] 206 \
+\[RightSkeleton]\\)\\)}\\)\\), 0.`}\\)\[NoBreak] cannot be transposed. \\!\\(\
+\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Transpose/nmtx\\\", \
+ButtonNote -> \\\"Transpose::nmtx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170518064*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Transpose", "::", "argt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(Transpose\\)\[NoBreak] called with \
+\[NoBreak]\\!\\(0\\)\[NoBreak] arguments; \[NoBreak]\\!\\(1\\)\[NoBreak] or \
+\[NoBreak]\\!\\(2\\)\[NoBreak] arguments are expected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/argt\\\", \
+ButtonNote -> \\\"Transpose::argt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101705633163`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Transpose", "::", "nmtx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first two levels of the one-dimensional list \
+\[NoBreak]\\!\\({\\\"Influido\\\", \\\"Influyente\\\", \\\"Inicial\\\", \
+\\\"Final\\\"}\\)\[NoBreak] cannot be transposed. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Transpose/nmtx\\\", ButtonNote -> \
+\\\"Transpose::nmtx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170617531*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Transpose", "::", "nmtx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The first two levels of the one-dimensional list \
+\[NoBreak]\\!\\({\\\"Influido\\\", \\\"Influyente\\\", \\\"Inicial\\\", \
+\\\"Final\\\"}\\)\[NoBreak] cannot be transposed. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Transpose/nmtx\\\", ButtonNote -> \
+\\\"Transpose::nmtx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101706191263`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170750312*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101707899723`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\({\\(Transpose[\\(\\(\\(\\({1, 2, 3, 4, 5, \
+6, 7, 8, 9, 10}\\)\\) \[Rule] \\(\\({\\\"Perdida de vegetacion de ribera\\\", \
+\\\"Nivel de erosion del cauce\\\", \\\"Profundidad del cauce\\\", \
+\\\"Canalizacion\\\", \\\"Presa de Pedrezuela\\\", \\\"Ancho del cauce\\\", \
+\\\"Sinuosidad\\\", \\\"Velocidad de las aguas\\\", \\(\\(\\\"\\\" \
+\[Ellipsis] \\\"s\\\"\\)\\), \\\"Cantidad de habitats\\\", \\\"Diversidad \
+biologica\\\", \\\"Fertilizantes agricolas\\\", \\\"Vertidos de \
+urbanizacion\\\", \\\"Contaminacion difusa\\\", \\\"Contaminacion \
+puntual\\\", \\\"Calidad de las aguas\\\"}\\)\\)\\)\\)]\\)}\\)\[NoBreak] is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.578310170832045*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(ReplaceAll :: reps\\), \\\"MessageName\\\"]\\)\
+\[NoBreak] will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5783101252883377`*^9, 3.5783101708812237`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1.`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "1.`", ",", "0.`", ",", "0.333`", 
+     ",", "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.`", ",", "0.`", ",",
+      "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.25`", ",", "0.`", ",", "1.`", ",", "0.333`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.334`", ",",
+      "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", "0.`",
+      ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.334`", ",", "0.166`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.17`", ",", "0.334`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.142`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.334`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "1.`", ",", 
+     "0.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "1.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.334`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.334`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{3.578310110003272*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1.`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.25`", ",", "0.25`", ",", "1.`", ",", "0.`", ",", "0.333`", 
+     ",", "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.`", ",", "0.`", ",",
+      "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.25`", ",", "0.`", ",", "1.`", ",", "0.333`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.334`", ",",
+      "0.`", ",", "0.166`", ",", "0.`", ",", "0.143`", ",", "0.`", ",", "0.`",
+      ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.334`", ",", "0.166`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.333`", ",", "0.166`", ",", "0.333`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.17`", ",", "0.334`", ",", "0.143`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.142`", ",", "0.333`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.143`", ",", "0.334`", ",", "0.`", 
+     ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "1.`", ",", 
+     "0.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "1.`", ",", "0.333`", ",", "0.333`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.334`", ",", "0.`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.334`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+     "0.`", ",", "0.`", ",", "0.`", ",", "0.2`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.578310110207675*^9}]
+}, Open  ]]
 },
 WindowSize->{944, 1132},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
@@ -581,7 +1079,27 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 22313, 543, 2273, "Input"]
+Cell[CellGroupData[{
+Cell[579, 22, 22519, 546, 2307, "Input"],
+Cell[23101, 570, 4200, 83, 284, "Output"],
+Cell[27304, 655, 1094, 18, 77, "Message"],
+Cell[28401, 675, 1159, 19, 78, "Message"],
+Cell[29563, 696, 1159, 19, 78, "Message"],
+Cell[30725, 717, 1159, 19, 78, "Message"],
+Cell[31887, 738, 559, 11, 24, "Message"],
+Cell[32449, 751, 1338, 21, 92, "Message"],
+Cell[33790, 774, 595, 11, 24, "Message"],
+Cell[34388, 787, 584, 11, 24, "Message"],
+Cell[34975, 800, 586, 11, 24, "Message"],
+Cell[35564, 813, 1159, 19, 78, "Message"],
+Cell[36726, 834, 1161, 19, 78, "Message"],
+Cell[37890, 855, 1159, 19, 78, "Message"],
+Cell[39052, 876, 559, 11, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39648, 892, 4175, 83, 284, InheritFromParent],
+Cell[43826, 977, 4176, 83, 284, "Output"]
+}, Open  ]]
 }
 ]
 *)

@@ -1,0 +1,49 @@
+Pérdida de vegetación de ribera,Pérdida de vegetación de ribera,1.0
+Nivel de erosión del cauce,Nivel de erosión del cauce,0.25
+Nivel de erosión del cauce,Pérdida de vegetación de ribera,0.25
+Nivel de erosión del cauce,Profundidad del cauce,0.25
+Nivel de erosión del cauce,Canalización,0.25
+Profundidad del cauce,Profundidad del cauce,0.25
+Profundidad del cauce,Nivel de erosión del cauce,0.25
+Profundidad del cauce,Presa de Pedrezuela,0.25
+Profundidad del cauce,Canalización,0.25
+Presa de Pedrezuela,Presa de Pedrezuela,1.0
+Ancho del cauce,Ancho del cauce,0.333
+Ancho del cauce,Presa de Pedrezuela,0.333
+Ancho del cauce,Canalización,0.333
+Canalización,Canalización,1.0
+Sinuosidad,Sinuosidad,0.333
+Sinuosidad,Canalización,0.333
+Sinuosidad,Velocidad de las aguas,0.333
+Velocidad de las aguas,Velocidad de las aguas,0.166
+Velocidad de las aguas,Profundidad del cauce,0.166
+Velocidad de las aguas,Ancho del cauce,0.166
+Velocidad de las aguas,Canalización,0.166
+Velocidad de las aguas,Sinuosidad,0.166
+Velocidad de las aguas,Cantidad de rápidos y remansos,0.166
+Cantidad de rápidos y remansos,Cantidad de rápidos y remansos,0.333
+Cantidad de rápidos y remansos,Canalización,0.333
+Cantidad de rápidos y remansos,Velocidad de las aguas,0.333
+Cantidad de hábitats,Cantidad de hábitats,0.149
+Cantidad de hábitats,Pérdida de vegetación de ribera,0.149
+Cantidad de hábitats,Profundidad del cauce,0.149
+Cantidad de hábitats,Ancho del cauce,0.149
+Cantidad de hábitats,Velocidad de las aguas,0.149
+Cantidad de hábitats,Cantidad de rápidos y remansos,0.149
+Cantidad de hábitats,Diversidad biológica,0.149
+Diversidad biológica,Diversidad biológica,0.333
+Diversidad biológica,Pérdida de vegetación de ribera,0.333
+Diversidad biológica,Cantidad de hábitats,0.333
+Fertilizantes agrícolas,Fertilizantes agrícolas,1.0
+Vertidos de urbanización,Vertidos de urbanización,1.0
+Contaminación difusa,Contaminación difusa,0.333
+Contaminación difusa,Fertilizantes agrícolas,0.333
+Contaminación difusa,Vertidos de urbanización,0.333
+Contaminación puntual,Contaminación puntual,0.333
+Contaminación puntual,Fertilizantes agrícolas,0.333
+Contaminación puntual,Vertidos de urbanización,0.333
+Calidad de las aguas,Calidad de las aguas,0.2
+Calidad de las aguas,Cantidad de hábitats,0.2
+Calidad de las aguas,Diversidad biológica,0.2
+Calidad de las aguas,Contaminación difusa,0.2
+Calidad de las aguas,Contaminación puntual,0.2
